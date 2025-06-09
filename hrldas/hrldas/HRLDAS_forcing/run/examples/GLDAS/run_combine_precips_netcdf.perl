@@ -1,0 +1,12 @@
+#!/bin/csh
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=1
+#SBATCH -p debug_queue
+#SBATCH --time=4:00:00  # format days-hh:mm:ss
+#SBATCH --mail-user=deepthought2getresults@gmail.com
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+
+module load openmpi_intel
+module load perl/5.12.0 
+perl combine_precips_netcdf.perl
